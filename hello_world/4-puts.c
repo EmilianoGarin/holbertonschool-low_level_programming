@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /*
- *main - push
+ * main - Empty point
  *
- *Description: push
+ * Description: push
  *
  * Return: Always 0 (Success)
  */
