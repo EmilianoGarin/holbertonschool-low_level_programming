@@ -3,13 +3,10 @@
 /**
  * jack_bauer - empty
  *
- *
- *
  * Description: clock
  *
  * Return: empty
  */
-
 void jack_bauer(void)
 {
 	int h, m;
