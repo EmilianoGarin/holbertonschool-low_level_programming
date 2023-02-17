@@ -13,7 +13,10 @@ void times_table(void)
 	for (x = 0; x < 10; x++)
 		for (y = 0; y < 10; y++)
 		{
-			printf("% 3d", x * y);
+			if (y == 0)
+				printf("0");
+			else
+				printf("% 3d", x * y);
 			if (y == 9)
 				printf("\n");
 			else
