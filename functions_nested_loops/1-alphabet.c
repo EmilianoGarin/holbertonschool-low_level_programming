@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * print_alphabet - empty point
+ *
+ * Description: print a-z
+ *
+ * Return: empty point
+ */
+
 void print_alphabet(void)
 {
 	int i;
