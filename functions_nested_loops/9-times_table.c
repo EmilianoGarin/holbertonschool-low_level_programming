@@ -1,12 +1,10 @@
 #include <stdio.h>
-
 /**
- * _islower - receive a int
+ * times_table - empty
  *
+ * Description: 9 times table
  *
- * Description: size
- *
- * Return: 1 if c is lowercase, 0 in oder case
+ * Return: empty
  */
 void times_table(void)
 {
@@ -15,7 +13,7 @@ void times_table(void)
 	for (x = 0; x < 10; x++)
 		for (y = 0; y < 10; y++)
 		{
-			printf("%d", x*y);
+			printf("%d", x * y);
 			if (y == 9)
 				printf("$\n");
 			else
