@@ -15,7 +15,7 @@ void times_table(void)
 		{
 			printf("% 3d", x * y);
 			if (y == 9)
-				printf("$\n");
+				printf("\n");
 			else
 				printf(",");
 		}
