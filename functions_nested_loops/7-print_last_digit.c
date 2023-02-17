@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
  * print_last_digit - receive a int
  *
@@ -13,6 +13,7 @@
 
 int print_last_digit(int x)
 {
+	x = abs (x);
 	x = x % 10;
 	_putchar(x + '0');
 	return (x);
