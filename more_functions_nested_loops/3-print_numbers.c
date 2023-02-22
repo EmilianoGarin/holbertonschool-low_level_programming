@@ -8,7 +8,7 @@
  * Return: Always 0 (success)
  */
 
-void print_numbers(void);
+void print_numbers(void)
 {
 int i;
 
@@ -16,6 +16,4 @@ int i;
 		_putchar(i);
 
 	_putchar(10);
-
-	return (0);
 }
