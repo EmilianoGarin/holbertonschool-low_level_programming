@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * print_numbers - empty point
+ * print_diagonal - empty point
+ *
+ * @n: number
  *
  * Description: size
  *
@@ -21,7 +23,7 @@ void print_diagonal(int n)
 			_putchar(92);
 			_putchar(10);
 		}
-	}	
-	else 
+	}
+	else
 		_putchar(10);
 }
