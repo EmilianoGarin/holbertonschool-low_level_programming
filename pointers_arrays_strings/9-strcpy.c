@@ -1,6 +1,7 @@
 #include "main.h"
+
 /**
- * _strcpy - *dest *src
+ * _stcpy - *dest *src
  *
  * @dest: char pointer
  * @src: char pointer
@@ -16,7 +17,6 @@ char *_strcpy(char *dest, char *src)
 	char *ret;
 
 	ret = dest;
-	
 	while (*(src + x) != '\0')
 	{
 		*(dest + x) = *(src + x);
