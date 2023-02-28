@@ -16,7 +16,7 @@ int _atoi(char *s)
 	int cont = 0;
 	int ret = 0;
 	int pot = 1;
-	int sep[20];
+	int ;
 	char sig = ' ';
 
 	while (*(s + x) != '\0')
