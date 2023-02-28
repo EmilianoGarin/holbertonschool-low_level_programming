@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _stcpy - *dest *src
+ * _strcpy - *dest *src
  *
  * @dest: char pointer
  * @src: char pointer
  *
- * description: copy
- * 
- * return: char pointer of dest
+ * Description: size
+ *
+ * Return: char pointer of dest
  */
 
 char *_strcpy(char *dest, char *src)
