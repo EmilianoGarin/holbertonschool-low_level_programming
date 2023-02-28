@@ -13,10 +13,18 @@
 void rev_string(char *s)
 {
 	int x = 0;
+	int i = 0;
+	char j[500];
 
 	while (*(s + x) != '\0')
+	{
+		j[x] = *(s + x);
 		x++;
+	}
 	x = x - 1;
 	for (; x > -1; x--)
-		_putchar((*(s + x)));
+	{
+		*(s + i) = j[x];
+		i++;
+	}
 }
