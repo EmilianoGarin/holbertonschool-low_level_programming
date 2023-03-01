@@ -19,9 +19,11 @@ char *cap_string(char *s)
 	{
 		
 		for (i = 0; i < 13; i++)
-			if (s[x] == pre_pal[i] || x == 0)
+			if (s[x] == pre_pal[i])
 				if (s[x + 1]  > 96 && s[x + 1] < 123)
 					s[x + 1] = (s[x + 1] - 32);
+		if (x == 0 && s[x]  > 96 && s[x] < 123)
+			s[x] = (s[x] - 32);
 		x++;
 	}
 	return (s);
