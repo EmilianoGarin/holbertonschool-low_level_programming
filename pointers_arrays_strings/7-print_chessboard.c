@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * string_toupper - de minuscula a mayuscula
+ * print_chessboard - imprime un tablero de ajedrez
  *
- * @s: string
+ * @a: string
  *
- * Description: size
+ * Description: tablero de ajedrez
  *
- * Return: Always 0 (success)
+ * Return: nada
  */
 
 void print_chessboard(char (*a)[8])
