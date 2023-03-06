@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * string_toupper - de minuscula a mayuscula
+ * _strlen_recursion - resibe una cadena de caracteres
  *
  * @s: string
  *
- * Description: size
+ * Description: cuaenta los caracteres del string
  *
  * Return: Always 0 (success)
  */
@@ -18,5 +18,5 @@ int _strlen_recursion(char *s)
 		x = x + _strlen_recursion(++s);
 	else
 		return (0);
-	return(x);
+	return (x);
 }
