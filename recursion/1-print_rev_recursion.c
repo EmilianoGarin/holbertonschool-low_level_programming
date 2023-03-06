@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * string_toupper - de minuscula a mayuscula
+ * _print_rev_recursion - resibe una cadena de caracteres
  *
  * @s: string
  *
- * Description: size
+ * Description: imprime un string al reves
  *
  * Return: Always 0 (success)
  */
