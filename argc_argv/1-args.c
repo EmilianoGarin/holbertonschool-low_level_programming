@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - retorna la cantidad de argumentos 
+ * main - retorna la cantidad de argumentos
  *
  *@argc:cantidad de argumentos (contando el nombre del programa)
  *@argv
