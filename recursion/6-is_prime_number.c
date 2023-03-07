@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * string_toupper - de minuscula a mayuscula
+ * is_prime_number - numeros primos
  *
- * @s: string
+ * @n: string
  *
  * Description: size
  *
@@ -17,5 +17,5 @@ int is_prime_number(int n)
 	else if ((n % n) % 1 == 0)
 		return (1);
 	else
-		return (1);	
+		return (1);
 }
