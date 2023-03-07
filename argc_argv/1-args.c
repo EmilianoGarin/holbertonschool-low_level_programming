@@ -4,7 +4,8 @@
  * main - retorna la cantidad de argumentos
  *
  *@argc:cantidad de argumentos (contando el nombre del programa)
- *@argv
+ *@argv:arry que contiene los nombres de los argumentos
+ *
  * Description: size
  *
  * Return: Always 0 (success)
