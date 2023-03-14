@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - concatena 2 strings 
+ * string_nconcat - concatena 2 strings
  *
  * @s1: string 1
  * @s2: string 2
@@ -24,9 +24,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*s2 = '\0';
 	while (s2[i] != '\0')
 		i++;
-	if (++i <= n)
+	i++;
+	if (i < n)
 		n = i;
 	i = 0;
+
 	while (s1[i] != '\0')
 		i++;
 	ret = malloc(sizeof(char) * (i + n));
@@ -35,6 +37,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (x = 0; x < i; x++)
 		ret[x] = s1[x];
 	for (i = 0; i < n; i++)
+	{
 		ret[x + i] = s2[i];
+	}
 	return (ret);
 }
