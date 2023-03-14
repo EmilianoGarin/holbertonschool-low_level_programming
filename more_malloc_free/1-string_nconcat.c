@@ -2,13 +2,15 @@
 #include <stdlib.h>
 
 /**
- * _strdup -
+ * string_nconcat - concatena 2 strings 
  *
- * @str: string
+ * @s1: string 1
+ * @s2: string 2
+ * @n: cantidad de caracteres del string 2 a copiar
  *
- * Description: 
+ * Description: concatena s1 con los n primeros caracteres de s2
  *
- * Return:
+ * Return:NULL si algo falla, ret si todo esta bien
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -16,10 +18,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int x, i = 0;
 	char *ret = NULL;
 
+	if (s1 == NULL)
+		*s1 = '\0';
+	if (s2 == NULL)
+		*s2 = '\0';
 	while (s2[i] != '\0')
 		i++;
-	i++;
-	if (i < n)
+	if (++i <= n)
 		n = i;
 	i = 0;
 	while (s1[i] != '\0')
