@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-/*
- * main - empty
+/**
+ * main - empty point
  *
- * Description: imprime el nombre del programa
+ *  Description: size
  *
- * Return: 0 si all right
+ * Return: Always 0 (success)
  */
 
 int main(void)
