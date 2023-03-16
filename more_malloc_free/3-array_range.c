@@ -4,7 +4,7 @@
 /**
  * absolut - redibe un numero y debuelbe el balor absoluto
  *
- * @n: numero 
+ * @n: numero
  *
  * Description: transforma un int en un unsigned int
  *
@@ -25,7 +25,7 @@ unsigned int absolut(int n)
  * @min: numero minimo
  * @max: numero maximo
  *
- * Description: crea un malloc con los numeros de min a max 
+ * Description: crea un malloc con los numeros de min a max
  *
  * Return: el puntero al malloc
  */
@@ -38,7 +38,7 @@ int *array_range(int min, int max)
 		return (NULL);
 	abmin = absolut(min);
 	abmax = absolut(max);
-	if (min < 0 && max < 0) 
+	if (min < 0 && max < 0)
 		tam = abmin - abmax + 1;
 	else if (min > 0 && max > 0)
 		tam = abmax - abmin + 1;
@@ -49,5 +49,5 @@ int *array_range(int min, int max)
 		return (NULL);
 	for (rec = 0; rec < tam; rec++)
 		ret[rec] = min + rec;
-	return (ret);		
+	return (ret);
 }
