@@ -1,8 +1,18 @@
 #ifndef _TASK_0_
 #define _TASK_0_
-struct dog{
-	char* name;
+/**
+ * dog - classe dog
+ * 
+ * @a: Nombre
+ * @age: edad
+ * @owner: nombre del dueño
+ *
+ * Description: x
+ */
+struct dog
+{
+	char *name;
 	float age;
-	char* owner;
+	char *owner;
 };
 #endif
