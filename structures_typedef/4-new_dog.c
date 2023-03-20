@@ -1,26 +1,6 @@
 #include "dog.h"
-
-/**
- * init_dog - inicializa una instancia de dog
- *
- * @d: struct dog
- * @name: el nombre de la mascota (usar el . para acceder es lo mismo que ->)
- * @age: la edad
- * @owner: el nombre del dueño
- *
- * Description: carga los balores de name, age y owner en d
- *
- * Return: void
- */
-void init_dog(struct dog *d, char *name, float age, char *owner)
-{
-	if (d != 0)
-	{
-		(*d).name = name;
-		(*d).age = age;
-		d->owner = owner;
-	}
-}
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * new_dog - crea e inicia un a instancia de dog_t
@@ -36,11 +16,16 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t k9;
-	dog_t *yk9 = &k9;
+	dog_t *k9;
 
-	init_dog(&k9, name, age, owner);
-	if (yk9 == 0)
-		return (0);
-	return (yk9);
+	k9 = malloc(sizeof(dog_t));
+	if (k9 != NULL)
+	{
+		(*k9).name = name;
+		(*k9).age = age;
+		(*k9).owner = owner;
+	}
+	else
+		return (NULL);
+	return (k9);
 }
