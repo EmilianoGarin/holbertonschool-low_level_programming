@@ -1,13 +1,12 @@
-#ifndef _TASK_0_
-#define _TASK_0_
+#ifndef _TASK_1_
+#define _TASK_1_
 /**
- * dog - classe dog
- * 
- * @a: Nombre
+ * struct dog - clase dog
+ * @name: Nombre
  * @age: edad
  * @owner: nombre del dueño
  *
- * Description: x
+ * Description: una clase dog con nombre, edad y dueño
  */
 struct dog
 {
