@@ -2,9 +2,9 @@
 #include <stdio.h>
 /**
  * print_dog - imprime una instancia de dog
- * 
+ *
  * @d: puntero de tipo dog
- * 
+ *
  * Description: evalua si d tienr elementos y los imprime
  *
  * Return: void
