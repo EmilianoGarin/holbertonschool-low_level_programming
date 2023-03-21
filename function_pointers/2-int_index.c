@@ -17,7 +17,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int x, cmpret;
 
-	if (size > 0)
+	if (size > 0 || array != 0 || cmp != 0)
 		for (x = 0; x < size; x++)
 		{
 			cmpret = cmp(array[x]);
