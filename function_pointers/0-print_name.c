@@ -13,5 +13,6 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	(*f)(name);
+	if (f != 0)
+		(*f)(name);
 }
