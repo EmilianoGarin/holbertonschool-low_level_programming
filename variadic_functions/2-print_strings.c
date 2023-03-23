@@ -26,10 +26,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	}
 	va_start(ap, n);
 	/*
-	 * x = sizeof(ap) / sizeof(char *);
-	 * if (x > n)
-	 * 	x = n;
-	 */
+	* x = sizeof(ap) / sizeof(char *);
+	* if (x > n)
+	* x = n;
+	*/
 	if (separator == NULL)
 		for (i = 1; i < x; i++)
 		{
