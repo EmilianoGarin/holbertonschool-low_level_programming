@@ -27,21 +27,25 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(ap, n);
 	if (separator == NULL)
 	{
-		str = va_arg(ap, char*);
 		for (i = 0; i < n - 1; i++)
+		{
+			str = va_arg(ap, char*);
 			if (str == NULL)
 				printf("%s%s", "(nil)", "");
 			else
 				printf("%s%s", str, "");
+		}
 	}
 	else
 	{
-		str = va_arg(ap, char*);
 		for (i = 0; i < n - 1; i++)
+		{
+			str = va_arg(ap, char*);
 			if (str == NULL)
 				printf("%s%s", "(nil)", separator);
 			else
 				printf("%s%s", str, separator);
+		}
 	}
 	printf("%s\n", va_arg(ap, char*));
 	va_end(ap);
