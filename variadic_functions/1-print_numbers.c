@@ -24,7 +24,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("\n");
 		return;
 	}
-	
+
 	va_start(ap, n); /*carga la lista con los balores desde n
 			  *hasta la ultima variable de ...
 			  */
