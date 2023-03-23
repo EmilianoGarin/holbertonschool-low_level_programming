@@ -28,7 +28,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	x = n;
 	if((sizeof(ap) / sizeof(char*)) < n)
-		x = sizeof(ap) / sizeof(char*);
+		x = (sizeof(ap) / sizeof(char*));
 	if (separator == NULL)
 	{
 		for (i = 0; i < x - 1; i++)
@@ -51,6 +51,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				printf("%s%s", str, separator);
 		}
 	}
-	printf("%s\n", va_arg(ap, char*));
+	if (va_arg(ap, char*) == NULL)
+		printf("(nil)\n");
+	else
+		printf("%s\n", va_arg(ap, char*));
 	va_end(ap);
 }
