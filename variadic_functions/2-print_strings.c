@@ -17,7 +17,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	char *str = NULL;
-	unsigned int i;
+	unsigned int i, x;
 
 	if (n == 0)
 	{
@@ -25,9 +25,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		return;
 	}
 	va_start(ap, n);
+
+	x = n;
+	if((sizeof(ap) / sizeof(char*)) < n)
+		x = sizeof(ap) / sizeof(char*);
 	if (separator == NULL)
 	{
-		for (i = 0; i < n - 1; i++)
+		for (i = 0; i < x - 1; i++)
 		{
 			str = va_arg(ap, char*);
 			if (str == NULL)
@@ -38,7 +42,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	}
 	else
 	{
-		for (i = 0; i < n - 1; i++)
+		for (i = 0; i < x - 1; i++)
 		{
 			str = va_arg(ap, char*);
 			if (str == NULL)
