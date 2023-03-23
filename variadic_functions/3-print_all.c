@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_start(ap, format);
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		if (i != 0 && x == 1)
 			printf(", ");
