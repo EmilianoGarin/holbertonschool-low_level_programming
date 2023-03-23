@@ -11,5 +11,6 @@ int main(void)
 
 	    print_strings(", ", 2 , "Jay", "Django", NULL);
 	    print_strings(", ", 4 , "Jay", "Django", NULL);
+	    print_strings("; ", 5, "You", "know", "nothing", "Jon Snow", "Jon Snow");
 	        return (0);
 }
