@@ -18,15 +18,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap; /*crea una variable que soporta la lista de variables en ...*/
 	unsigned int i, x;
-	char *sep = separator;
 
 	if (n == 0)
 	{
 		printf("\n");
 		return;
 	}
-	if (separator == NULL)
-		sep = "";
+	
 	va_start(ap, n); /*carga la lista con los balores desde n
 			  *hasta la ultima variable de ...
 			  */
@@ -35,8 +33,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 					     *compruebo que n no se mayor
 					     */
 		x = sizeof(ap) / sizeof(int);
-	for (i = 0; i < x - 1; i++)
-		printf("%d%s", va_arg(ap, int), sep);
+	if (separator == NULL)
+	{
+		for (i = 0; i < x - 1; i++)
+			printf("%d%s", va_arg(ap, int), "");
+	}
+	else
+	{
+		for (i = 0; i < x - 1; i++)
+			printf("%d%s", va_arg(ap, int), separator);
+	}
 	printf("%d\n", va_arg(ap, int)); /*lee el argumento de tamaño int
 					  *guardado en ap
 					  *(esto mueve el puntero int bytes)
