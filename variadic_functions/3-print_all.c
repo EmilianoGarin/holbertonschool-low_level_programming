@@ -3,6 +3,31 @@
 #include <stddef.h>
 #include <stdio.h>
 
+void print_c (va_list ap)
+{
+	printf("%c", va_arg(ap, int));
+}
+
+void print_i (va_list ap)
+{
+	printf("%d", va_arg(ap, int));
+}
+
+void print_f (va_list ap)
+{
+	printf("%f", va_arg(ap, double));
+}
+
+void print_s (va_list ap)
+{
+	char *str =  va_arg(ap, char*);
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
+}
 /**
  *  print_all - imprime char, integer, float y string
  *
@@ -18,41 +43,30 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int x, i = 0;
-	char *str;
+	int x, j, i = 0;
+	/*va_list *p = &ap;*/
+	pr prt[] = {
+		{'c', print_c},
+		{'i', print_i},
+		{'f', print_f},
+		{'s', print_s},
+		{'0', NULL}
+	};
 
 	va_start(ap, format);
 	while (format != NULL && format[i] != '\0')
 	{
 		if (i != 0 && x == 1)
 			printf(", ");
-		switch (format[i])
+		x = 0;
+		j = 0;
+		while (prt[j].flag != '0')
 		{
-		case'c':
-			printf("%c", va_arg(ap, int));
+			if (prt[j].flag == format[i])
+				prt[j].print(ap);
 			x = 1;
-			break;
-		case'i':
-			printf("%d", va_arg(ap, int));
-			x = 1;
-			break;
-		case'f':
-			printf("%f", va_arg(ap, double));
-			x = 1;
-			break;
-		case's':
-			str =  va_arg(ap, char*);
-			x = 1;
-			if (str == NULL)
-			{
-				printf("(nil)");
-				break;
-			}
-			printf("%s", str);
-			break;
-		default:
-			x = 0;
-		};
+			j++;
+		}
 		i++;
 	}
 	printf("\n");
