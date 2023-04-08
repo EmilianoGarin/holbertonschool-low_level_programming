@@ -1,6 +1,6 @@
-#include <stddef.h>
 #ifndef _TASK_
 #define _TASK_
+#include <stddef.h>
 
 /**
  * struct list_s - singly linked list
@@ -12,7 +12,7 @@
  */
 typedef struct list_s
 {
-       	char *str;
+	char *str;
 	unsigned int len;
 	struct list_s *next;
 } list_t;
