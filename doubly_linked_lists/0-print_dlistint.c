@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 /**
- * print_list - Prints str and len of a Linked list
+ * print_dlistint - Prints str and len of a Linked list
  * @h: heder of a linked list
  * Return: return the numbers of elements
  */
@@ -12,8 +12,8 @@ size_t print_dlistint(const dlistint_t *h)
 	while (1)
 	{
 		if (h == NULL)
-			return(cont);
-		printf("%d\n",h->n);
+			return (cont);
+		printf("%d\n", h->n);
 		cont++;
 		if (h->next == NULL)
 			return (cont);
