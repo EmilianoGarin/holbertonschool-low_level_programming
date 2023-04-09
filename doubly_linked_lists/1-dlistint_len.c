@@ -5,7 +5,7 @@
  * @h: heder of a linked list
  * Return: return the numbers of elements
  */
-size_t dlistint_len(const dlistint_t *h);
+size_t dlistint_len(const dlistint_t *h)
 {
 	size_t cont = 0;
 
