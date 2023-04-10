@@ -7,10 +7,10 @@
  * Return: retorna la potencia del numero base, si p es 0
  * retorna 1, dado que la potencia de un numero a la 0 es 1
  */
-unsigned int _pow (unsigned int base, unsigned int p)
+unsigned int _pow(unsigned int base, unsigned int p)
 {
 	unsigned int ret = 1;
-	
+
 	if (p == 0)
 		return (1);
 	for (; p > 0; p--)
