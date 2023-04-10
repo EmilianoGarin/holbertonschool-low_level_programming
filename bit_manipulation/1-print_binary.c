@@ -7,8 +7,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int mul = 0;
-	int cos = 0;
+	unsigned long int mul = 0, cos = 0;
 
 	for (; (mul + 2) <= n; mul += 2)
 		cos++;
