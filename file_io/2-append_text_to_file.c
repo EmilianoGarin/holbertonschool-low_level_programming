@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * create_file - crea un archivo
+ * append_text_to_file - carga un texto al final
  * @filename: char nombre del archivo
  * @text_content: texto a cargar en el erchivo
  * Return: retorna -1 si falla, retorna 1 si esta bien
