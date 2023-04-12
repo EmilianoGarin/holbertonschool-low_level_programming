@@ -2,7 +2,7 @@
 /**
  * create_file - crea un archivo
  * @filename: char nombre del archivo
- * @text_content: texto a cargar en el erchivo 
+ * @text_content: texto a cargar en el erchivo
  * Return: retorna -1 si falla, retorna 1 si esta bien
  */
 
@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 	if (fl == -1)
 		return (-1);
 	if (text_content != NULL)
-	{	
+	{
 		while (text_content[wr] != '\0')
 			wr++;
 		wr = write(fl, text_content, wr);
