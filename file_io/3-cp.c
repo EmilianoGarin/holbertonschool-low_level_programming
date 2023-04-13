@@ -11,7 +11,7 @@ void err_c(int x, char *name)
 {
 	if (x == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %s\n", name);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", name);
 		exit(100);
 	}
 }
@@ -30,29 +30,25 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		return (97);
 	}
-	of = open(av[1], O_RDONLY);
-	if (of == -1)
+	if ((of = open(av[1], O_RDONLY)) == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		return (98);
 	}
-	nf = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
-	if (nf == -1)
+	if ((nf = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664)) == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
-		err_c(close(of), av[1]);	
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		err_c(close(of), av[1]);
 		return (99);
-		
 	}
 	while ((re = read(of, txt, 1024)) > 0)
 	{
-		wr = write(nf, txt, re);
-		if (wr == -1)
+		if ((wr = write(nf, txt, re)) == -1)
 		{
-			dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			err_c(close(nf), av[2]);
 			err_c(close(of), av[1]);
 			return (99);
@@ -60,7 +56,7 @@ int main(int ac, char **av)
 	}
 	if (re == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		err_c(close(nf), av[2]);
 		err_c(close(of), av[1]);
 		return (98);
