@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int indx;
 	unsigned int x = 0;
 	char *val = strdup(value), *ky = strdup(key);
-	hash_node_t *ne = NULL;
+	hash_node_t *ne = NULL, *aux = NULL;
 
 	if (ht == NULL)
 		return (0);
@@ -29,15 +29,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		ne->next = ht->array[indx];
-		while (ht->array[indx]->next != NULL)
+		aux = ht->array[indx];
+		while (aux->next != NULL)
 		{
-			if (ht->array[indx]->key == ky)
+			if (strcmp(aux->key, ky) == 0)
 			{
-				ht->array[indx]->value = val;
+				aux->value = val;
 				free(ne);
 				return (1);
 			}
-			ht->array[indx] = ht->array[indx]->next;
+			aux = aux->next;
 		}
 	}
 	ht->array[indx] = ne;
