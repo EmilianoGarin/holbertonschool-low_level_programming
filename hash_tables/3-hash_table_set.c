@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		ne->next = ht->array[indx];
 		aux = ht->array[indx];
-		while (aux->next != NULL)
+		while (aux != NULL)
 		{
 			if (strcmp(aux->key, ky) == 0)
 			{
