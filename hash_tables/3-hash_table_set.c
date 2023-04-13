@@ -27,7 +27,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[indx] == 0)
 		ne->next = NULL;
 	else
+	{
 		ne->next = ht->array[indx];
+		while (ht->array[indx]->next != NULL)
+		{
+			if (ht->array[indx]->key == ky)
+			{
+				ht->array[indx]->value = val;
+				free(ne);
+				return (1);
+			}
+			ht->array[indx] = ht->array[indx]->next;
+		}
+	}
 	ht->array[indx] = ne;
 	return (1);
 }
