@@ -33,12 +33,14 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		return (97);
 	}
-	if ((of = open(av[1], O_RDONLY)) == -1)
+	of = open(av[1], O_RDONLY);
+	if (of == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		return (98);
 	}
-	if ((nf = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664)) == -1)
+	nf = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
+	if (nf == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		err_c(close(of), av[1]);
@@ -46,7 +48,8 @@ int main(int ac, char **av)
 	}
 	while ((re = read(of, txt, 1024)) > 0)
 	{
-		if ((wr = write(nf, txt, re)) == -1)
+		wr = write(nf, txt, re);
+		if (wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			err_c(close(nf), av[2]);
