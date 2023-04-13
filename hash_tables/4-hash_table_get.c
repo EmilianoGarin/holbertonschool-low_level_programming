@@ -16,7 +16,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	indx = hash_djb2((const unsigned char *)ky) % ht->size;
 	if (ht->array[indx] != 0)
 		while (ht->array[indx] != NULL)
+		{
 			if (strcmp(ht->array[indx]->key, ky) == 0)
 				return (ht->array[indx]->value);
+			ht->array[indx] = ht->array[indx]->next;	
+		}
 	return (NULL);
 }
