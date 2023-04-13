@@ -1,8 +1,8 @@
 #include "hash_tables.h"
 /**
- * hash_table_create - crea una tabla hash
- * @size: unsigned long int con el tamaño del arreglo
- * Return: retorna la direccion de la estructura con el arreglo y el largo
+ * hash_djb2 - combierte una cadena de texto en un numero unico por cadena
+ * @str: cadena de texto
+ * Return: retorna el valor de hash
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {

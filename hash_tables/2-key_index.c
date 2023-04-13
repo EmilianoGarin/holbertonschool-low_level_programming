@@ -4,7 +4,7 @@
  * y hace el modulo entre el largo para quedarce con un valor dentro del array
  * @size: unsigned long int con el tamaño del arreglo
  * @key: cadena de texto que se usa para hacer el hash
- * Return: retorna la direccion de la estructura con el arreglo y el largo
+ * Return:retorna el valor del index, que es menor o igual que size
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
