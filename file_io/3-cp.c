@@ -4,14 +4,14 @@
 /**
  * err_c - imprime el error en close
  * @x: valor
- * @name: nombre del archivo
+ * @fl: indicador de archivo
  * Return: void
  */
-void err_c(int x, char *name)
+void err_c(int x, int fl)
 {
 	if (x == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", name);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fl);
 		exit(100);
 	}
 }
@@ -43,7 +43,7 @@ int main(int ac, char **av)
 	if (nf == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		err_c(close(of), av[1]);
+		err_c(close(of), of);
 		return (99);
 	}
 	while ((re = read(of, txt, 1024)) > 0)
@@ -52,16 +52,16 @@ int main(int ac, char **av)
 		if (wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-			err_c(close(nf), av[2]);
-			err_c(close(of), av[1]);
+			err_c(close(nf), nf);
+			err_c(close(of), of);
 			return (99);
 		}
 	}
 	if (re == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		err_c(close(nf), av[2]);
-		err_c(close(of), av[1]);
+		err_c(close(nf), nf);
+		err_c(close(of), of);
 		return (98);
 	}
 	return (0);
