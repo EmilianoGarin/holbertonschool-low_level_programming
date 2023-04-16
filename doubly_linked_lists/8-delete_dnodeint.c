@@ -14,38 +14,29 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (fin == NULL)
 		return (-1);
-	for (i = 0; i < index; i++)
+	for (i = 0; i < index; i++)/*busca el nodo a eliminar*/
 	{
 		if (fin->next == NULL)
 			return (-1);
 		fin = fin->next;
 	}
 	
-	if (fin->next == NULL)
+	n = fin->next;/*guarda el puntero next*/
+	p = fin->prev;/*guarda el puntero prev*/
+	free(fin);/*libera el nodo*/
+	if (n == NULL)/*verifica si es le ultimo nodo*/
 	{
-		if (fin->prev == NULL)
-		{
-			free(fin);
+		if (p == NULL)/*verifica si es le unico nodo*/
 			return (1);
-		}
-		fin = fin->prev;
-		free(fin->next);
-	       	fin->next = NULL;
+		p->next = NULL;
 		return (1);
 	}
-	if (fin->prev == NULL)
+	else if (p == NULL)/*verifica si es el primer nodo*/
+		n->prev = NULL;
+	else/*si es un nodo en medio de la lista*/
 	{
-		fin = fin->next;
-		free(fin->prev);
-		fin->prev = NULL;
-		return (1);
+		p->next = n;
+		n->prev = p;
 	}
-	n = fin->next;
-	p = fin->prev;
-	fin = fin->prev;
-	free(fin->next);
-	fin->next = n;
-	fin = fin->next;
-	fin->prev = p;
 	return (1);
 }
