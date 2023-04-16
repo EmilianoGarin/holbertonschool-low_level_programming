@@ -18,6 +18,8 @@ void hash_table_delete(hash_table_t *ht)
 		while (aux != NULL)
 		{
 			nex = aux->next;
+			free(aux->key);
+			free(aux->value);
 			free(aux);
 			aux = nex;
 		}
